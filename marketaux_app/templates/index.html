@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis</title>
+    <!-- Referencing the static CSS file through Django -->
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h1>Stock Sentiment Analysis</h1>
+    <form id="stock-form" method="post">
+        {% csrf_token %}
+        <label for="symbol">Enter stock symbol:</label><br>
+        <input type="text" id="symbol" name="symbol"><br>
+        <input type="submit" value="Analyze">
+    </form>
+    <div id="result" style="color: black; display: {% if not sentiment_result %}none{% endif %};">
+        {{ sentiment_result }}
+    </div>
+
+  
+    <!-- Referencing the static JS file through Django -->
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
