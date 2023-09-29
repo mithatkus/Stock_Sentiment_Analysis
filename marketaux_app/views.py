@@ -18,7 +18,7 @@ lemmatizer = WordNetLemmatizer()
 sia = SentimentIntensityAnalyzer()
 
 # TODO: Define API_TOKEN or fetch from environment variables
-API_TOKEN = "dkEjzWA1sYC64w7LJU3XP368d5dAU16r8wRe89tT"
+API_TOKEN = "API_TOKEN"
 
 def home(request):
     return render(request, 'index.html')
